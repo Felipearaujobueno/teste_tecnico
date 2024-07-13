@@ -1,0 +1,6 @@
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.pdb
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.AssemblyReference.cache
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
