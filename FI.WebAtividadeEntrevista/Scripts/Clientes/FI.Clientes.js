@@ -10,6 +10,7 @@ $(document).ready(function () {
                 "CEP": $(this).find("#CEP").val(),
                 "Email": $(this).find("#Email").val(),
                 "Sobrenome": $(this).find("#Sobrenome").val(),
+                "Cpf": $(this).find("#Cpf").val(),
                 "Nacionalidade": $(this).find("#Nacionalidade").val(),
                 "Estado": $(this).find("#Estado").val(),
                 "Cidade": $(this).find("#Cidade").val(),
@@ -55,4 +56,14 @@ function ModalDialog(titulo, texto) {
 
     $('body').append(texto);
     $('#' + random).modal('show');
+}
+
+function mascaraCpf() {
+    var cpf = document.getElementById('Cpf');
+    if (cpf.value.length == 3 || cpf.value.length == 7) { cpf.value += '.' }
+    if (cpf.value.length == 11) { cpf.value += '-' }
+}
+
+function isNumber(val) {
+    return !isNaN(val);
 }
