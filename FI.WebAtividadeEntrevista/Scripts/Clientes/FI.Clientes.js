@@ -1,5 +1,27 @@
-﻿
+﻿var arrObjBeneficiarios = [];
+
 $(document).ready(function () {
+    $("#Cpf").on("keypress", function() {
+        mascaraCpf("Cpf");
+    });
+
+    $("#mdlBeneficiario").on("hidden.bs.modal", function () {
+        $("#cpfBeneficiario").val('');
+        $("#nomeBeneficiario").val('');
+        $("#tbBeneficiarios tbody").empty();
+    });
+
+    $("#btnBeneficiarios").on("click", function() {
+        PreencherTbBeneficiarios();
+    });
+
+    $(document).on("keypress", "#cpfBeneficiario", function () {
+        mascaraCpf("cpfBeneficiario");
+    });
+    $(document).on("click", "#btnIncluirBeneficiario", function () {
+        IncluirBeneficiario();
+    });
+
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -15,7 +37,8 @@ $(document).ready(function () {
                 "Estado": $(this).find("#Estado").val(),
                 "Cidade": $(this).find("#Cidade").val(),
                 "Logradouro": $(this).find("#Logradouro").val(),
-                "Telefone": $(this).find("#Telefone").val()
+                "Telefone": $(this).find("#Telefone").val(),
+                "Beneficiarios": JSON.stringify(ListarBeneficiarios())
             },
             error:
             function (r) {
@@ -28,6 +51,7 @@ $(document).ready(function () {
             function (r) {
                 ModalDialog("Sucesso!", r)
                 $("#formCadastro")[0].reset();
+                LimparArrBeneficiarios();
             }
         });
     })
@@ -56,14 +80,4 @@ function ModalDialog(titulo, texto) {
 
     $('body').append(texto);
     $('#' + random).modal('show');
-}
-
-function mascaraCpf() {
-    var cpf = document.getElementById('Cpf');
-    if (cpf.value.length == 3 || cpf.value.length == 7) { cpf.value += '.' }
-    if (cpf.value.length == 11) { cpf.value += '-' }
-}
-
-function isNumber(val) {
-    return !isNaN(val);
 }

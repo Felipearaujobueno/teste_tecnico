@@ -4,3 +4,6 @@ C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\bin\Debug\Newtonsoft.Json.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.AtividadeEntrevista\obj\Debug\FI.Ativi.A54B2C84.Up2Date

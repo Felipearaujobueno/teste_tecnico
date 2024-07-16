@@ -1,0 +1,46 @@
+﻿<div id="mdlBeneficiario" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Beneficiários</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cpfBeneficiario">CPF:</label>
+                            <input required="required" type="text" class="form-control" id="cpfBeneficiario" name="cpfBeneficiario" placeholder="Ex.: 010.011.111-00" maxlength="14" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nomeBeneficiario">Nome:</label>
+                            <input required="required" type="text" class="form-control" id="nomeBeneficiario" name="nomeBeneficiario" placeholder="Ex.: João" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <button id="btnIncluirBeneficiario" class="btn btn-sm btn-success">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover" id="tbBeneficiarios">
+                            <thead>
+                                <tr>
+                                    <th scope="col">CPF</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="Cpf">CPF:</label>
-                <input required="required" type="text" class="form-control" id="Cpf" name="Cpf" placeholder="Ex.: 010.011.111-00" maxlength="14" autocomplete="off" onkeypress="mascaraCpf()">
+                <input required="required" type="text" class="form-control" id="Cpf" name="Cpf" placeholder="Ex.: 010.011.111-00" maxlength="14" autocomplete="off">
             </div>
         </div>
         <div class="col-md-6">
@@ -80,6 +80,9 @@
 
     <div class="row">
         <div class="col-lg-12">
+            <div class="pull-left">
+                <button type="button" id="btnBeneficiarios" class="btn btn-primary" data-toggle="modal" data-target="#mdlBeneficiario">Beneficiários</button>
+            </div>
             <div class="pull-right">
                 <button type="submit" class="btn btn-sm btn-success">Salvar</button>
                 @Html.ActionLink("Voltar", "Index", "Cliente", new { }, new { @class = "btn btn-sm btn-danger" })
@@ -89,3 +92,81 @@
 
 
 </form>
+
+<div id="mdlBeneficiario" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="mdlBeneficiario_close">×</button>
+                <h4 class="modal-title">Beneficiários</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cpfBeneficiario">CPF:</label>
+                            <input required="required" type="text" class="form-control" id="cpfBeneficiario" name="cpfBeneficiario" placeholder="Ex.: 010.011.111-00" maxlength="14" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="nomeBeneficiario">Nome:</label>
+                            <input required="required" type="text" class="form-control" id="nomeBeneficiario" name="nomeBeneficiario" placeholder="Ex.: João" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <button id="btnIncluirBeneficiario" class="btn btn-success" style="margin-top: 22%;">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover" id="tbBeneficiarios">
+                            <thead>
+                                <tr>
+                                    <th scope="col">CPF</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<div id="mdlAlterarBeneficiario" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                                    
+                <h4 class="modal-title">Alterar Beneficiário</h4>                                                                          
+            </div>                                                                                                                        
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cpfBeneficiarioAlterado">CPF:</label>
+                            <input required="required" type="text" class="form-control" id="cpfBeneficiarioAlterado" name="cpfBeneficiarioAlterado" placeholder="Ex.: 010.011.111-00" maxlength="14" autocomplete="off" onkeypress="mascaraCpf('cpfBeneficiario')">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nomeBeneficiarioAlterado">Nome:</label>
+                            <input required="required" type="text" class="form-control" id="nomeBeneficiarioAlterado" name="nomeBeneficiarioAlterado" placeholder="Ex.: João" maxlength="50">
+                        </div>
+                    </div>
+                </div>
+            </div>                                                                                                                        
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>                                       
+                <button type="button" id="btnSalvarBeneficiario" class="btn btn-danger" data-dismiss="modal">Salvar</button>                    
+            </div>                                                                                                                         
+        </div>                                                                                                            
+    </div>                                                                                                      
+</div>

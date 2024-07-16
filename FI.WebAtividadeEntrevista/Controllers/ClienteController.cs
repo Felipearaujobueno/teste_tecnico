@@ -26,6 +26,7 @@ namespace WebAtividadeEntrevista.Controllers
         public JsonResult Incluir(ClienteModel model)
         {
             BoCliente bo = new BoCliente();
+            BoBeneficiarios bb = new BoBeneficiarios();
             
             if (!this.ModelState.IsValid)
             {
@@ -53,6 +54,7 @@ namespace WebAtividadeEntrevista.Controllers
                     Telefone = model.Telefone
                 });
 
+                bb.Incluir(model.Beneficiarios, model.Id);
            
                 return Json("Cadastro efetuado com sucesso");
             }

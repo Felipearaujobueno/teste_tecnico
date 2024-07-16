@@ -13,14 +13,11 @@ namespace FI.WebAtividadeEntrevista.Utilities
 
         public bool ValidarCPF(string cpf)
         {
-            // Remover caracteres não numéricos do CPF
             cpf = Regex.Replace(cpf, @"[^\d]", "");
 
-            // Verificar se tem 11 dígitos
             if (cpf.Length != 11)
                 return false;
 
-            // Calcula os dígitos verificadores
             int[] multiplicadoresPrimeiroDigito = { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicadoresSegundoDigito = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
 
@@ -46,7 +43,6 @@ namespace FI.WebAtividadeEntrevista.Utilities
             resto = soma % 11;
             int digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
 
-            // Verifica se os dígitos calculados conferem com os dígitos do CPF informado
             return cpf.EndsWith(digitoVerificador1.ToString() + digitoVerificador2.ToString());
         }
     }
