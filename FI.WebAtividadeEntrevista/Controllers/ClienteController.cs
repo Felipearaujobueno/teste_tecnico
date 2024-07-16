@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FI.AtividadeEntrevista.DML;
+using FI.AtividadeEntrevista.Util;
 
 namespace WebAtividadeEntrevista.Controllers
 {
@@ -98,7 +99,10 @@ namespace WebAtividadeEntrevista.Controllers
         public ActionResult Alterar(long id)
         {
             BoCliente bo = new BoCliente();
+            BoBeneficiarios boBeneficiarios = new BoBeneficiarios();
             Cliente cliente = bo.Consultar(id);
+            List<Beneficiario> beneficiarios = boBeneficiarios.Consultar(id);
+            Functions functions = new Functions();
             Models.ClienteModel model = null;
 
             if (cliente != null)
@@ -114,8 +118,9 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = cliente.Nacionalidade,
                     Nome = cliente.Nome,
                     Sobrenome = cliente.Sobrenome,
-                    CPF = cliente.CPF,
-                    Telefone = cliente.Telefone
+                    CPF = functions.FormatarCPF(cliente.CPF),
+                    Telefone = cliente.Telefone,
+                    BeneficiariosLista = beneficiarios
                 };
 
             

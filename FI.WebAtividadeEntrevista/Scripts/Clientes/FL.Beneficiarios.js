@@ -1,4 +1,6 @@
-﻿function ModalDialogConfirm(titulo, texto, id) {
+﻿var arrObjBeneficiarios = [];
+
+function ModalDialogConfirm(titulo, texto, id) {
     var random = Math.random().toString().replace('.', '');
     var texto = '<div id="' + random + '" class="modal fade">                                                                                           ' +
         '        <div class="modal-dialog">                                                                                                             ' +
@@ -42,12 +44,6 @@ function PreencherTbBeneficiarios() {
 
         table.append(_html);
     }
-}
-
-function mascaraCpf(elementId) {
-    var cpf = document.getElementById(elementId);
-    if (cpf.value.length == 3 || cpf.value.length == 7) { cpf.value += '.' }
-    if (cpf.value.length == 11) { cpf.value += '-' }
 }
 
 var classId = 0;
@@ -109,20 +105,7 @@ function SalvarBeneficiario(id) {
     var cpf = $("#cpfBeneficiarioAlterado").val();
     var cpfAlterado = cpf != $(".bnc-cpf-" + id).text() ? true : false;
 
-    if (!validarCPF(cpf)) {
-        $("#mdlAlterarBeneficiario").modal('hide');
-        ModalDialog("Ocorreu um erro", "CPF inválido.");
-        return;
-    }
-
-    if (cpfAlterado) {
-
-        if (existeCPF(cpf)) {
-            $("#mdlAlterarBeneficiario").modal('hide');
-            ModalDialog("Ocorreu um erro", "Este CPF já está sendo usado.");
-            return;
-        }
-    }
+    if (!ValidaBeneficiario(nome, cpf, cpfAlterado)) { return }
 
     $(".bnc-nome-" + id).text(nome);
     $(".bnc-cpf-" + id).text(cpf);
@@ -133,6 +116,33 @@ function SalvarBeneficiario(id) {
         nome: nome
     }
     AlterarIndicieBeneficiario(obj);
+}
+
+function ValidaBeneficiario(nome, cpf, cpfAlterado) {
+    let valido = true;
+
+    if (nome == '' || cpf == '') {
+        $("#mdlAlterarBeneficiario").modal('hide');
+        ModalDialog("Ocorreu um erro", "Preencha os campos obrigatórios.");
+        valido = false;
+    }
+
+    if (!validarCPF(cpf) && cpf !== '') {
+        $("#mdlAlterarBeneficiario").modal('hide');
+        ModalDialog("Ocorreu um erro", "CPF inválido.");
+        valido = false;
+    }
+
+    if (cpfAlterado) {
+
+        if (existeCPF(cpf)) {
+            $("#mdlAlterarBeneficiario").modal('hide');
+            ModalDialog("Ocorreu um erro", "Este CPF já está sendo usado.");
+            valido = false;
+        }
+    }
+
+    return valido;
 }
 
 function ModalExcluirBeneficio(classNum) {
@@ -180,6 +190,11 @@ function ExcluirIndicieBeneficiario(classNum) {
 function AlterarIndicieBeneficiario(objBeneficiario) {
     ExcluirIndicieBeneficiario(objBeneficiario.id);
     SalvarObj(objBeneficiario.id, objBeneficiario.nome, objBeneficiario.cpf);
+}
+function InserirObjBeneficiarios(arrObjBeneficiariosList) {
+    arrObjBeneficiariosList.forEach(obj => {
+        SalvarObj(obj.Id, obj.Nome, obj.CPF);
+    });
 }
 
 function LimparArrBeneficiarios() {

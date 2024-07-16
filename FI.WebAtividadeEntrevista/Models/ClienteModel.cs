@@ -1,4 +1,5 @@
-﻿using FI.WebAtividadeEntrevista.Validations;
+﻿using FI.AtividadeEntrevista.DML;
+using FI.WebAtividadeEntrevista.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +13,8 @@ namespace WebAtividadeEntrevista.Models
     /// </summary>
     public class ClienteModel
     {
+        private readonly int _edicaoCadastro;
+
         public long Id { get; set; }
         
         /// <summary>
@@ -63,11 +66,13 @@ namespace WebAtividadeEntrevista.Models
         [Required]
         public string Sobrenome { get; set; }
 
+        public bool EdicaoPedido { get; set; }
+
         /// <summary>
         /// CPF
         /// </summary>
         [Required]
-        [CPF(ErrorMessage = "CPF inválido.")]
+        [CPF]
         public string CPF { get; set; }
 
         /// <summary>
@@ -76,6 +81,8 @@ namespace WebAtividadeEntrevista.Models
         public string Telefone { get; set; }
 
         public string Beneficiarios { get; set; }
+
+        public List<Beneficiario> BeneficiariosLista { get; set; }     
 
     }    
 }

@@ -1,5 +1,5 @@
 ﻿using FI.AtividadeEntrevista.BLL;
-using FI.WebAtividadeEntrevista.Utilities;
+using FI.AtividadeEntrevista.Util;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

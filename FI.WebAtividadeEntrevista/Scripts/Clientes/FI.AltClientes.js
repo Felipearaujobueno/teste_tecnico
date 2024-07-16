@@ -1,5 +1,26 @@
 ﻿
 $(document).ready(function () {
+    $("#Cpf").on("keypress", function () {
+        mascaraCpf("Cpf");
+    });
+
+    $("#mdlBeneficiario").on("hidden.bs.modal", function () {
+        $("#cpfBeneficiario").val('');
+        $("#nomeBeneficiario").val('');
+        $("#tbBeneficiarios tbody").empty();
+    });
+
+    $("#btnBeneficiarios").on("click", function () {
+        PreencherTbBeneficiarios();
+    });
+
+    $(document).on("keypress", "#cpfBeneficiario", function () {
+        mascaraCpf("cpfBeneficiario");
+    });
+    $(document).on("click", "#btnIncluirBeneficiario", function () {
+        IncluirBeneficiario();
+    });
+
     if (obj) {
         $('#formCadastro #Nome').val(obj.Nome);
         $('#formCadastro #CEP').val(obj.CEP);
@@ -11,6 +32,8 @@ $(document).ready(function () {
         $('#formCadastro #Cidade').val(obj.Cidade);
         $('#formCadastro #Logradouro').val(obj.Logradouro);
         $('#formCadastro #Telefone').val(obj.Telefone);
+
+        InserirObjBeneficiarios(obj.BeneficiariosLista)
     }
 
     $('#formCadastro').submit(function (e) {

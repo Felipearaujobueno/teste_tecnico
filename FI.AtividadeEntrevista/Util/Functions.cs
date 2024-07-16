@@ -1,7 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
-namespace FI.WebAtividadeEntrevista.Utilities
+namespace FI.AtividadeEntrevista.Util
 {
     public class Functions
     {
@@ -45,5 +49,32 @@ namespace FI.WebAtividadeEntrevista.Utilities
 
             return cpf.EndsWith(digitoVerificador1.ToString() + digitoVerificador2.ToString());
         }
+
+        public string FormatarCPF(string cpf)
+        {
+            cpf = RemoverNaoNumericos(cpf);
+
+            if (cpf.Length != 11)
+            {
+                throw new ArgumentException("O CPF deve conter exatamente 11 dígitos.");
+            }
+
+            return cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-");
+        }
+
+        private string RemoverNaoNumericos(string texto)
+        {
+            var apenasDigitos = new StringBuilder();
+            foreach (char c in texto)
+            {
+                if (char.IsDigit(c))
+                {
+                    apenasDigitos.Append(c);
+                }
+            }
+            return apenasDigitos.ToString();
+        }
+
     }
 }
+

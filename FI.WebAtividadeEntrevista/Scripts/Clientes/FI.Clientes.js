@@ -1,5 +1,4 @@
-﻿var arrObjBeneficiarios = [];
-
+﻿
 $(document).ready(function () {
     $("#Cpf").on("keypress", function() {
         mascaraCpf("Cpf");

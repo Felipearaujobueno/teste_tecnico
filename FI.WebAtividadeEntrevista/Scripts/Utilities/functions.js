@@ -35,3 +35,9 @@
 
     return false;
 }
+
+function mascaraCpf(elementId) {
+    var cpf = document.getElementById(elementId);
+    if (cpf.value.length == 3 || cpf.value.length == 7) { cpf.value += '.' }
+    if (cpf.value.length == 11) { cpf.value += '-' }
+}

@@ -14,11 +14,20 @@ namespace FI.AtividadeEntrevista.BLL
     {
         public void Incluir(string beneficiario, long idCliente)
         {
-            DaoBeneficiario db = new DaoBeneficiario();
-            foreach(Beneficiario item in DeserializeJsonBeneficiarios(beneficiario))
+            if(!string.IsNullOrEmpty(beneficiario))
             {
-                db.Incluir(item, idCliente);
+                DaoBeneficiario db = new DaoBeneficiario();
+                foreach(Beneficiario item in DeserializeJsonBeneficiarios(beneficiario))
+                {
+                    db.Incluir(item, idCliente);
+                }
             }
+        }
+
+        public List<Beneficiario> Consultar(long id)
+        {
+            DaoBeneficiario beneficiario = new DaoBeneficiario();
+            return beneficiario.Consultar(id);
         }
 
         private List<Beneficiario> DeserializeJsonBeneficiarios(string jsonBeneficiarios)
