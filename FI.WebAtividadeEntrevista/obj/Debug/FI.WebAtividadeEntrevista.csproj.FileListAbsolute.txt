@@ -79,3 +79,9 @@ C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\ros
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\roslyn\vbc.rsp
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\roslyn\VBCSCompiler.exe
 C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Users\FELIPE\Desktop\Projetos\teste_tecnico\FI.WebAtividadeEntrevista\bin\pt-br\System.Web.WebPages.Razor.resources.dll
